@@ -5,6 +5,11 @@ date: "Tuesday, February 03, 2015"
 output: html_document
 ---
 
+```{r, eval = FALSE, echo=FALSE, warning=FALSE, message=FALSE, results="hide"}
+library(devtools)
+install_github("environmentalinformatics-marburg/magicVis")
+```
+
 # mapAttributeOverRaster
 ```{r}
 library(magicVis)
@@ -14,11 +19,11 @@ library(sp)
 data(meuse.grid)
 coordinates(meuse.grid) = ~x+y
 gridded(meuse.grid) = TRUE
-raster <- raster(meuse.grid[3])
+rst <- raster(meuse.grid[3])
 
 data(meuse)
 coordinates(meuse) = ~x+y
-vector <- meuse[5]
+vec <- meuse[5]
 
 mapAttributeOverRaster(rst, vec, attr = 1)
 
