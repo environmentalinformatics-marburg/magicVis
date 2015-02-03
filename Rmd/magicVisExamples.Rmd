@@ -2,7 +2,9 @@
 title: "magicVis Examples"
 author: "Environmental Informatics"
 date: "Tuesday, February 03, 2015"
-output: html_document
+output:
+  html_document:
+    keep_md: yes
 ---
 
 ```{r, eval = FALSE, echo=FALSE, warning=FALSE, message=FALSE, results="hide"}
