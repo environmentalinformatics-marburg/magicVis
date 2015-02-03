@@ -1,0 +1,25 @@
+---
+title: "magicVis Examples"
+author: "Environmental Informatics"
+date: "Tuesday, February 03, 2015"
+output: html_document
+---
+
+# mapAttributeOverRaster
+```{r}
+library(magicVis)
+library(raster)
+library(sp)
+
+data(meuse.grid)
+coordinates(meuse.grid) = ~x+y
+gridded(meuse.grid) = TRUE
+raster <- raster(meuse.grid[3])
+
+data(meuse)
+coordinates(meuse) = ~x+y
+vector <- meuse[5]
+
+mapAttributeOverRaster(rst, vec, attr = 1)
+
+```
