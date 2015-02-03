@@ -12,8 +12,8 @@ library(devtools)
 install_github("environmentalinformatics-marburg/magicVis")
 ```
 
-# mapAttributeOverRaster
-```{r}
+# mapAttributeOverRaster(...)
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results="hide"}
 library(magicVis)
 library(raster)
 library(sp)
