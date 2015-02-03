@@ -6,13 +6,15 @@ output:
   html_document:
     keep_md: yes
 ---
+The following examples illustrate the different plotting functions included in the package.
 
 ```{r, eval = FALSE, echo=FALSE, warning=FALSE, message=FALSE, results="hide"}
 library(devtools)
 install_github("environmentalinformatics-marburg/magicVis")
 ```
 
-# mapAttributeOverRaster(...)
+
+### mapAttributeOverRaster(...)
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results="hide"}
 library(magicVis)
 library(raster)
@@ -28,5 +30,4 @@ coordinates(meuse) = ~x+y
 vec <- meuse[5]
 
 mapAttributeOverRaster(rst, vec, attr = 1)
-
 ```
