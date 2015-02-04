@@ -1,2 +1,2 @@
 # magicVis
-Visualized things for things visualized.
+Visual things for things visual.
