@@ -4,19 +4,21 @@
 \alias{mapAttributeOverRaster}
 \title{Visualize point vector attributes on top of a raster layer}
 \usage{
-mapAttributeOverRaster(raster, vector, vector_colors = "default", gnbr = 5,
-  attr = 3)
+mapAttributeOverRaster(raster, vector, attr = 1, vector_colors = "default",
+  gnbr = 5, glns = FALSE)
 }
 \arguments{
 \item{raster}{a raster layer}
 
 \item{vector}{a spatial point data frame}
 
+\item{attr}{column number of the attribute to be visualized}
+
 \item{vector_colors}{a color palette for the vector layer}
 
 \item{gnbr}{number of map grid lines (horizontal = vertical)}
 
-\item{attr}{column number of the attribute to be visualized}
+\item{glns}{draw grid lines (TRUE) or just tics (FALSE)}
 }
 \value{
 map-type lattice plot object
@@ -25,7 +27,17 @@ map-type lattice plot object
 The function plots a raster map as background for a point vector layer.
 }
 \examples{
-Not run:
-map(landsat, vegetation, gnbr=3, attr=4)
+library(raster)
+library(sp)
+data(meuse.grid)
+coordinates(meuse.grid) = ~x+y
+gridded(meuse.grid) = TRUE
+rst <- raster(meuse.grid[3])
+
+data(meuse)
+coordinates(meuse) = ~x+y
+vec <- meuse[5]
+
+mapAttributeOverRaster(rst, vec, attr = 1)
 }
 

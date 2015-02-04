@@ -1,0 +1,48 @@
+---
+title: "magicVis"
+subtitle: "Visualized things for things visualized."
+author: "Environmental Informatics"
+output:
+  html_document:
+    keep_md: yes
+---
+
+The following examples illustrate the different plotting functions included in the package.
+
+```{r, eval = FALSE, echo=FALSE, warning=FALSE, message=FALSE, results="hide"}
+library(devtools)
+install_github("environmentalinformatics-marburg/magicVis")
+```
+
+
+### mapAttributeOverRaster(...)
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results="hide"}
+library(magicVis)
+library(raster)
+library(sp)
+
+data(meuse.grid)
+coordinates(meuse.grid) = ~x+y
+gridded(meuse.grid) = TRUE
+rst <- raster(meuse.grid[3])
+
+data(meuse)
+coordinates(meuse) = ~x+y
+vec <- meuse
+
+mapAttributeOverRaster(rst, vec, attr = 5)
+```
+
+
+### mapVectorSimple(...)
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results="hide"}
+library(magicVis)
+library(raster)
+library(sp)
+
+data(meuse)
+coordinates(meuse) = ~x+y
+vec <- meuse
+
+mapVectorSimple(vec, attr = 5)
+```

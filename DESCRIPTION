@@ -1,7 +1,7 @@
 Package: magicVis
 Type: Package
 Title: Smorgasboard for visualization functions
-Version: 0.1.2
+Version: 0.1.3
 Date: 2015-02-03
 Author: Tim Appelhans, Florian Detsch, Hanna Meyer, Thomas Nauss, Insa Otte
 Maintainer: Environmental Informatics <admin@environmentalinformatics-marburg.de>
